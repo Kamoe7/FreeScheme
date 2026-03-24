@@ -12,11 +12,11 @@ Before getting started, make sure you have:
 
 ## Setup
 
-1. Clone the repository
-git clone https://github.com/Kamoe7/FreeScheme.git
+1. Clone the repository<br>
+git clone https://github.com/Kamoe7/FreeScheme.git<br>
 cd FreeScheme
 
-2. Install dependencies
+2. Install dependencies<br>
 npm install
 
 3. Run the development server
