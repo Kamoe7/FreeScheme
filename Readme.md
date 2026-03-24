@@ -19,7 +19,7 @@ cd FreeScheme
 2. Install dependencies<br>
 npm install
 
-3. Run the development server
+3. Run the development server<br>
 npm run dev
 
 ## How to Access
