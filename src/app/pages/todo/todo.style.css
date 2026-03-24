@@ -1,0 +1,49 @@
+
+.app-container {
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.title {
+  text-align: center;
+  color: #a855f7;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: 0.5px solid #a855f7;
+}
+
+button {
+  background: #a855f7;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #9333ea;
+}
+
+.task-card {
+  background: white;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
