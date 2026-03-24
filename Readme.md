@@ -1,60 +1,54 @@
-1. 
+# FreeSchema Todo App
 
-Clone the repository
+A simple todo list app built using the FreeSchema (mftsccs-browser) framework.  
+You can create, edit, and delete tasks with real-time sync.
+
+## Getting Started
+
+Before getting started, make sure you have:
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+## Setup
+
+1. Clone the repository
 git clone https://github.com/Kamoe7/FreeScheme.git
 cd FreeScheme
 
-
-2.
-
-Install dependencies
+2. Install dependencies
 npm install
 
-
-3. 
-
-Set up your FreeSchema credentials
-This app uses mftsccs-browser for data storage and sync. You need to be logged in via the login service before the app will work.
-Make sure your login.service.ts is configured and getLocalUserId() returns a valid user ID. If your project has a login page, log in first before navigating to the todo app.
-
-
-4.
- 
-Run the development server
+3. Run the development server
 npm run dev
-Open your browser at http://localhost:5173 (or whichever port your bundler uses).
 
+## How to Access
 
+After running the app, open:
 
-How It Works
-Creating a task
+http://localhost:5173/todo
 
-Fill in the Task Name, Task Description, and Task Status fields in the Create Task form.
-Click Create Task.
-The task is saved locally and synced to the FreeSchema backend automatically.
+This is where the todo app is available.
 
-Editing a task
+## Features
 
-Click the Edit button on any task card.
-An edit form will appear below the task list pre-filled with the task's current values.
-Make your changes and click Update.
-Click Cancel to dismiss the form without saving.
+- Create tasks  
+- Edit tasks  
+- Delete tasks  
+- Task status (done = green, others = yellow)
 
-Deleting a task
+## Note
 
-Click the Delete button on any task card.
-Confirm the deletion in the prompt.
-The task is removed and the edit form closes if it was open for that task.
+Make sure the login system is working properly.  
+The app depends on `getLocalUserId()` returning a valid user ID, otherwise data won’t sync correctly.
 
-Task status color
+## Contributing
 
-Tasks with status done display in green.
-All other statuses display in yellow
+Create a new branch:
+git checkout -b feature/your-feature-name
 
+Commit your changes:
+git commit -m "add: your message"
 
-Contributing
-
-Create a new branch for your feature: git checkout -b feature/your-feature-name
-Make your changes.
-Commit with a clear message: git commit -m "add: description of what you did"
-Push and open a pull request: git push origin feature/your-feature-name
+Push and open PR:
+git push origin feature/your-feature-name
