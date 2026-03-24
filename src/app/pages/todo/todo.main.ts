@@ -7,10 +7,15 @@ import "./todo.style.css";
 export class TodoList extends StatefulWidget {
 
   before_render(): void {
-    this.render();
+    this.render()
+
   }
 
   after_render(): void {
+    
+    if ((window as any)._todoMounted) return;
+    (window as any)._todoMounted = true;
+
     let createDiv = this.getElementById("create");
     let listDiv = this.getElementById("list");
     let editDiv = this.getElementById("edit");

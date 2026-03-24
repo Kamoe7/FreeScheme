@@ -26,20 +26,25 @@ export class ListTask extends StatefulWidget {
   }
 
     loadQuery() {
-         let nameQ = new FreeschemaQuery();
-    nameQ.typeConnection = "the_task_name";
-    nameQ.name = "taskname";
+        let nameQ = new FreeschemaQuery();
+        nameQ.typeConnection = "the_task_name";
+        nameQ.name = "taskname";
 
-    let query = new FreeschemaQuery();
-    query.type = "the_task";
-    query.freeschemaQueries = [nameQ];
-    query.selectors = ["the_task_description", "the_task_status"];
-    query.outputFormat = JUSTDATA;
+        let query = new FreeschemaQuery();
+        query.type = "the_task";
+        query.freeschemaQueries = [nameQ];
+        query.selectors = ["the_task_description", "the_task_status"];
+        query.outputFormat = JUSTDATA;
 
-    SchemaQueryListener(query, "").subscribe((data: any) => {
-        this.tasks = data;
-        this.render();
-    });
+        let debounceTimer: any = null;
+
+        SchemaQueryListener(query, "").subscribe((data: any) => {
+            this.tasks = data;
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                this.render();
+            }, 100);
+        });
 
 
 }
@@ -58,7 +63,6 @@ export class ListTask extends StatefulWidget {
 
     validTasks.forEach((t: any) => {
 
-        this.tasks.filter((t: any) => t !== null && t !== undefined).forEach((t: any) => {
             let name   = t.the_task?.the_task_name?.the_name?.data   ?? "(no name)";
             let desc   = t.the_task?.the_task_description?.the_description?.data ?? "";
             let status = t.the_task?.the_task_status?.the_status?.data ?? "pending";
@@ -100,7 +104,6 @@ export class ListTask extends StatefulWidget {
         container.appendChild(btnWrapper);
         body.appendChild(container);
         });
-    });
     
 
 
