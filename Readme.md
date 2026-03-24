@@ -1,7 +1,7 @@
 1. 
 
 Clone the repository
-git clone https://github.com/your-username/FreeScheme.git
+git clone https://github.com/Kamoe7/FreeScheme.git
 cd FreeScheme
 
 
